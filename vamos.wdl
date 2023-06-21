@@ -9,7 +9,6 @@ workflow vamos {
         File BAM_INDEX
         File MOTIFS
         String SAMPLE = basename(BAM, ".bam")
-	Int diskSizeGb = 1024
 	Int cpu
         Int mem
 	Int diskSizeGb
