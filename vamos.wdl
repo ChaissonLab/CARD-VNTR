@@ -9,6 +9,7 @@ workflow vamos {
         File BAM_INDEX
         File MOTIFS
         String SAMPLE = basename(BAM, ".bam")
+	Int diskSizeGb = 1024
     }
 
     call vamosTest {
@@ -46,6 +47,7 @@ task vamosTest {
         docker: "mchaisso/vamos:1.2.6"
         cpu: cpu
         memory: mem+"GB"
+	disks: "local-disk " + diskSizeGb + " LOCAL"
     }
 }
 
