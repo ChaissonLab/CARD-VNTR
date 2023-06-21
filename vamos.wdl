@@ -10,14 +10,20 @@ workflow vamos {
         File MOTIFS
         String SAMPLE = basename(BAM, ".bam")
 	Int diskSizeGb = 1024
+	Int cpu
+        Int mem
+	Int diskSizeGb
     }
 
-    call vamosTest {
+    call vamosAnnotation {
         input:
         bam = BAM,
         bam_index = BAM_INDEX,
         motifs = MOTIFS,
-        sample = SAMPLE
+        sample = SAMPLE,
+	taskCpu = cpu,
+	taskMem = mem,
+	taskDiskSizeGb = diskSizeGb	
     }
 
     output {
@@ -25,14 +31,15 @@ workflow vamos {
     }
 }
 
-task vamosTest {
+task vamosAnnotation {
     input {
         File bam
         File bam_index
         File motifs
         String sample
-        Int cpu = 1
-        Int mem = 8
+        Int taskCpu
+        Int taskMem
+	Int taskDiskSizeGb
     }
 
     command <<<
