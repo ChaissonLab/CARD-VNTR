@@ -1,8 +1,6 @@
 version: 1.2
 workflows:
   - subclass: WDL
-    primaryDescriptorPath: /assoc-aggregate/assoc-aggregate.wdl
-    testParameterFiles:
-      - /assoc-aggregate/assoc-aggregate-terra-allele.json
+    primaryDescriptorPath: vamos.wdl
     authors:
       - orcid: 0000-0001-8575-997X
