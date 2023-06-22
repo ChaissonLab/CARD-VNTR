@@ -12,6 +12,7 @@ workflow vamos {
 	Int cpu
         Int mem
 	Int diskSizeGb
+	String mode
     }
 
     call vamosAnnotation {
@@ -22,7 +23,8 @@ workflow vamos {
         sample = SAMPLE,
 	taskCpu = cpu,
 	taskMem = mem,
-	taskDiskSizeGb = diskSizeGb	
+	taskDiskSizeGb = diskSizeGb,
+	taskMode = mode
     }
 
     output {
@@ -39,10 +41,11 @@ task vamosAnnotation {
         Int taskCpu
         Int taskMem
 	Int taskDiskSizeGb
+	String taskMode
     }
 
     command <<<
-        vamos --contig -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf
+        vamos ~{taskMode} -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf
     >>>
 
     output {
