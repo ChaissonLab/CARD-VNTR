@@ -45,7 +45,7 @@ task vamosAnnotation {
     }
 
     command <<<
-        vamos ~{taskMode} -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf
+        vamos ~{taskMode} -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf -t ~{taskCpu}
     >>>
 
     output {
