@@ -6,7 +6,6 @@ workflow vamos {
 
     input {
         File BAM
-        File BAM_INDEX
         File MOTIFS
         String SAMPLE = basename(BAM, ".bam")
 	Int cpu
@@ -18,7 +17,6 @@ workflow vamos {
     call vamosAnnotation {
         input:
         bam = BAM,
-        bam_index = BAM_INDEX,
         motifs = MOTIFS,
         sample = SAMPLE,
 	taskCpu = cpu,
@@ -35,7 +33,6 @@ workflow vamos {
 task vamosAnnotation {
     input {
         File bam
-        File bam_index
         File motifs
         String sample
         Int taskCpu
