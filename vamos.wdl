@@ -6,6 +6,7 @@ workflow vamos {
 
     input {
         File BAM
+	File BAI
         File MOTIFS
         String SAMPLE = basename(BAM, ".bam")
 	Int cpu
@@ -33,6 +34,7 @@ workflow vamos {
 task vamosAnnotation {
     input {
         File bam
+	File bai
         File motifs
         String sample
         Int taskCpu
