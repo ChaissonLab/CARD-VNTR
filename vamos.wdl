@@ -34,7 +34,6 @@ workflow vamos {
 task vamosAnnotation {
     input {
         File bam
-	File bai
         File motifs
         String sample
         Int taskCpu
