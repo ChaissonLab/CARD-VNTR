@@ -44,11 +44,11 @@ task vamosAnnotation {
     }
 
     command <<<
-        vamos ~{taskMode} -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{outVCF}.vcf -t ~{taskCpu}
+        vamos ~{taskMode} -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf -t ~{taskCpu}
     >>>
 
     output {
-        File outVCF
+        File outVCF = sample.vcf
     }
 
     runtime {
