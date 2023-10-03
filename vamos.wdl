@@ -18,6 +18,7 @@ workflow vamos {
     call vamosAnnotation {
         input:
         bam = BAM,
+        bai = BAI,
         motifs = MOTIFS,
         sample = SAMPLE,
 	taskCpu = cpu,
@@ -35,6 +36,7 @@ workflow vamos {
 task vamosAnnotation {
     input {
         File bam
+        File bai
         File motifs
         String sample
         Int taskCpu
