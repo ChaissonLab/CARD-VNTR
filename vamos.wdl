@@ -27,7 +27,8 @@ workflow vamos {
     }
 
     output {
-        File out_vcf =  "~{sample}.vcf"
+        File out_vcf = vamosAnnotation.outVCF
+
     }
 }
 
