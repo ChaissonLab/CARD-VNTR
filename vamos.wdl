@@ -27,7 +27,7 @@ workflow vamos {
     }
 
     output {
-        File out_vcf =  glob("*.vcf")[0]
+        File out_vcf =  "~{sample}.vcf"
     }
 }
 
