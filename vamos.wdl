@@ -48,7 +48,7 @@ task vamosAnnotation {
     >>>
 
     output {
-        File outVCF = sample + ".vcf"
+        File outVCF = "~{sample}.vcf"
     }
 
     runtime {
