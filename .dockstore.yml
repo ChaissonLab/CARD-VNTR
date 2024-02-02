@@ -1,6 +1,6 @@
 version: 1.2
 workflows:
   - subclass: WDL
-    primaryDescriptorPath: vamos.wdl
+    primaryDescriptorPath: /vamos.wdl
     authors:
       - orcid: 0000-0001-8575-997X
