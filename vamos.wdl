@@ -54,7 +54,7 @@ task vamosAnnotation {
     }
 
     runtime {
-        docker: "mchaisso/vamos:2.1.5"
+        docker: "mchaisso/vamos:2.1.8"
         cpu: taskCpu
         memory: taskMem+"GB"
 	disks: "local-disk " + taskDiskSizeGb + " LOCAL"
