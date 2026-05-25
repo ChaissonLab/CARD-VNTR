@@ -46,7 +46,7 @@ task vamosAnnotation {
     }
 
     command <<<
-        vamos ~{taskMode} -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf -t ~{taskCpu}
+        vamos ~{taskMode} -l -b ~{bam} -r ~{motifs} -s ~{sample} -o ~{sample}.vcf -t ~{taskCpu}
     >>>
 
     output {
@@ -54,7 +54,7 @@ task vamosAnnotation {
     }
 
     runtime {
-        docker: "mchaisso/vamos:3.0.6"
+        docker: "mchaisso/vamos:v3.1.1"
         cpu: taskCpu
         memory: taskMem+"GB"
 	disks: "local-disk " + taskDiskSizeGb + " LOCAL"
